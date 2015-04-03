@@ -2,7 +2,7 @@
 
 #include "DemoOne.h"
 #include "UFO.h"
-
+#include <cmath>
 
 // Sets default values
 AUFO::AUFO()
@@ -20,8 +20,19 @@ void AUFO::BeginPlay()
 
 // Called every frame
 void AUFO::Tick( float DeltaTime )
-{
+{	
 	Super::Tick( DeltaTime );
 
+	auto currPos = GetActorLocation();
+
+	auto nextPos = currPos + dir * speed * DeltaTime;
+
+	double z = std::sin(x) * 10;
+
+	x += 0.1;
+
+	SetActorLocation(nextPos);
+
+	AddActorLocalOffset(FVector(.0f, .0f, z));
 }
 

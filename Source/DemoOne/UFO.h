@@ -9,12 +9,16 @@ UCLASS()
 class DEMOONE_API AUFO : public AActor
 {
 	GENERATED_BODY()
+	double x = .0f;
 	
 public:	
 	
 	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category=UFO)
 	float speed;
-	   
+
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = UFO)
+	FVector dir = FVector(.0f, 1.0f, 0.0f);
+
 	// Sets default values for this actor's properties
 	AUFO();
 
