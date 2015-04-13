@@ -2,20 +2,28 @@
 
 #include "DemoOne.h"
 #include "UFO.h"
-#include <cmath>
 
 // Sets default values
 AUFO::AUFO()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempMesh(TEXT("/Game/ThirdPersonBP/Meshes/CubeMesh"));
+
+	this->SetRootComponent(mesh);
+
+	mesh->SetStaticMesh(tempMesh.Object);
+
+	mesh->OnComponentBeginOverlap.AddDynamic(this, &AUFO::Activate);
 }
 
 // Called when the game starts or when spawned
 void AUFO::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -23,16 +31,28 @@ void AUFO::Tick( float DeltaTime )
 {	
 	Super::Tick( DeltaTime );
 
-	auto currPos = GetActorLocation();
+	if (canMove)
+	{
+		auto currPos = GetActorLocation();
 
-	auto nextPos = currPos + dir * speed * DeltaTime;
+		auto nextPos = currPos + dir * speed * DeltaTime;
 
-	double z = std::sin(x) * 10;
+		double z = FMath::Sin(x) * 4;
 
-	x += 0.1;
+		x += 0.1;
 
-	SetActorLocation(nextPos);
+		SetActorLocation(nextPos);
 
-	AddActorLocalOffset(FVector(.0f, .0f, z));
+		AddActorLocalOffset(FVector(.0f, .0f, z));
+	}
 }
+
+
+void AUFO::Activate(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool FromSweep, const FHitResult& SweepResult)
+{
+	canMove = true;
+}
+
+
+
 

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\DemoOne.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{29054B02-E893-4151-A695-F96175BEE223}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\DemoOne.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\DemoOneEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{8889ED97-26FB-4008-A976-8E9448E084ED}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\DemoOne">
+			<UniqueIdentifier>{FEA0C0EB-712C-4127-B909-042260EB2A89}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\DemoOne\DemoOne.Build.cs">
+			<Filter>Source\DemoOne</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\DemoOne\DemoOne.cpp">
+			<Filter>Source\DemoOne</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\DemoOne\DemoOne.h">
+			<Filter>Source\DemoOne</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\DemoOne\UFO.cpp">
+			<Filter>Source\DemoOne</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\DemoOne\UFO.h">
+			<Filter>Source\DemoOne</Filter>
+		</ClInclude >
+		<Filter Include="Source\DemoOne\Resources">
+			<UniqueIdentifier>{CABEB826-DA5A-4C1A-BFF9-C1AE926FA6AF}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Source\DemoOne\Resources\Windows">
+			<UniqueIdentifier>{F1218784-DED3-4C47-B8C5-B72DBC9F2A36}</UniqueIdentifier>
+		</Filter>
+		<ResourceCompile Include="..\..\Source\DemoOne\Resources\Windows\DemoOne.rc">
+			<Filter>Source\DemoOne\Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
+</Project>
